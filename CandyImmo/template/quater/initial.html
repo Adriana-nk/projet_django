@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Candy Immo</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Bienvenue à Candy Immo</h1>
+        <p>Gérez vos quartiers et maisons facilement.</p>
+        
+        <div class="button-container">
+            <!-- Bouton pour créer un quartier -->
+            <form action="{% url 'accueil' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn">Créer Quartier</button>
+            </form>
+
+            <!-- Bouton pour créer une maison -->
+            <form action="{% url 'maison' %}" method="GET">
+                <button type="submit" class="btn">Créer Maison</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

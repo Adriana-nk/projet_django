@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+</head>
+<body>
+    <form action="{% url 'maison' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-container">
+            <h1>Ajouter une Maison</h1>
+            
+            <div class="form-group">
+                <label for="couleur">Couleur de la maison</label>
+                <input type="text" id="couleur" name="couleur" placeholder="Entrez la couleur de la maison">
+            </div>
+            
+            <div class="form-group">
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse" name="adresse" placeholder="Entrez l'adresse">
+            </div>
+            
+            <div class="form-group">
+                <label for="quartier">Quartier</label>
+                <select id="quartier" name="quartier">
+                    <option value="" disabled selected>Choisissez un quartier</option>
+                    <option value="Quartier 1">Quartier 1</option>
+                    <option value="Quartier 2">Quartier 2</option>
+                    <option value="Quartier 3">Quartier 3</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="superficie">Superficie</label>
+                <input type="text" id="superficie" name="superficie" placeholder="Entrez la superficie">
+            </div>
+            
+            <div class="form-group">
+                <label for="type_maison">Type de maison</label>
+                <select id="type_maison" name="type_maison">
+                    <option value="" disabled selected>Choisissez un type de maison</option>
+                    <option value="Appartement">Appartement</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Maison individuelle">Maison individuelle</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="nombre_douche">Nombre de douches</label>
+                <input type="number" id="nombre_douche" name="nombre_douche" placeholder="Entrez le nombre de douches">
+            </div>
+            
+            <div class="button-container">
+                <button type="submit" class="btn">Ajouter Maison</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
